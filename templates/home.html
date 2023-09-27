@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+interview-assessment-test
+{% endblock %}
+{% block cssfiles %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container-fluid pt-3 ">
+    <div class="container p-2">
+        <h4 class="custom-class" style="color: rgb(3, 3, 122);font-weight: bold;">INTERVIEW CONFIDENCE LEVEL ASSESSMENT</h4>
+    </div>
+    <div class="form-container">  
+    <form method="POST" action="{% url 'user_assessment:home' %}">
+        {% csrf_token %}
+        <!-- <label for="username">Username</label> -->
+        <input type="text" id="username" name="username" placeholder="Username">
+        <!-- <label for="password">Password</label> -->
+        <input type="password" id="password" name="password" placeholder="Password">
+        <div class="custom-button">
+        <button class="button-style" type="submit">Login</button>
+    </div>
+    
+    </form>
+    <div class="mt-3">
+        <p class="text-center">Don't have an account?
+            <a href="{% url 'user_assessment:user_signup' %}" class="custom-link">Sign up</a>
+        </p>
+    </div>
+    {% if error is not None %}
+    <p class="text-danger text-center">{{error}}</p>
+    {% endif %}
+</div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+interview-assessment-test
+{% endblock %}
+{% block cssfiles %}
+<link rel="stylesheet" href="{% static 'start-assessment.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="button-form" id="assessment-container">
+        <button id="start-assessment-button" onclick="startAssessment()">
+            START ASSESSMENT
+        </button>
+        <!-- <div  class="interview-process"> -->
+        <p id="assessment-progress" style="display: none;color: rgb(4, 4, 101);font-size: 28px;font-weight: bold;">Interview Processing...</p>
+    <!-- </div> -->
+    </div>
+</div>
+<script>
+    function startAssessment() {
+        // Hide the button
+        document.getElementById('start-assessment-button').style.display = 'none';
+
+        // Show the processing message
+        document.getElementById('assessment-progress').style.display = 'block';
+
+        // Redirect to the Emotion Analysis view
+        window.location.href = '{% url "emotion_analysis_app:emotion_analysis" %}';
+    }
+</script>
+{% endblock %}

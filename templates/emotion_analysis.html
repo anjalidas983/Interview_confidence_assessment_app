@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+confidence-assessment
+{% endblock %}
+{% block cssfiles %}
+<link rel="stylesheet" href="{% static 'emotion_assessment.css' %}"
+{% endblock %}
+{% block content %}
+<div class="container-fluid mt-5">
+<div class="text-center">
+<h2 style="font-size: 25px;color: rgb(5, 5, 95);font-weight: bold;">You have successfully completed your confidence level assessment.</h2>
+ <h3 style="font-size: 25px;color: rgb(5, 5, 95);font-weight: bold;">Your confidence level is  {{ average_confidence_percentage }}% </h3>
+
+{% if average_confidence_percentage >= 80 %}
+<p>Your confidence is excellent! Best of luck in your interview.</p>
+{% elif average_confidence_percentage >= 60 %}
+<p>Your confidence is good. Keep up the great work!</p>
+{% else %}
+<p>Your confidence is still developing. Don't worry, practice makes perfect!</p>
+{% endif %}
+</div>
+
+</div>
+
+
+<!-- <div>
+    {% if average_confidence_percentage is not None %}
+        <h3>Average Confidence Level</h3>
+        <p>{{ average_confidence_percentage }}</p>
+    {% else %}
+        <p>No images captured.</p>
+    {% endif %}
+</div> -->
+
+{% endblock %}

@@ -1,0 +1,73 @@
+.form-container {
+
+    width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    height: 370px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+ 
+
+
+.button-style {
+    margin-top: 4px;
+    text-align: center;
+}
+
+
+/* 
+label {
+    display: block;
+    margin-bottom: 2px;
+    font-weight: bold;
+} */
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Style the submit button */
+.custom-button {
+    background-color: rgb(8, 8, 106);
+    color: #fff;
+    border: none;
+    padding: 8px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.custom-button:hover {
+    background-color: #0550a1;
+}
+
+/* Style the login link */
+p {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.custom-account {
+
+    text-align: center;
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+interview-assessment-test
+{% endblock %}
+{% block cssfiles %}
+<link rel="stylesheet" href="{% static 'signup.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="container pt-3">
+        <h4 class="custom-class" style="color: rgb(3, 3, 122);font-weight: bold;">INTERVIEW CONFIDENCE LEVEL ASSESSMENT</h4>
+    </div>
+    <div class="form-container mt-3">
+    <form method="POST" action="{% url 'user_assessment:user_signup' %}">
+        {% csrf_token %}
+      
+       <!-- <label for="username">Username</lable> -->
+       <input id="username" name="username" type="text" placeholder="Username">
+       <!-- <label for="password">Password</lable> -->
+       <input id="password" name="password" type="password" placeholder="Password">
+       <!-- <label for="confirmpassword">Confirm Password</label> -->
+        <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+       <!-- <label for="email">Email</label> -->
+        <input type="email" id="email" name="email" placeholder="Email">
+       <div class="button-style">
+       <button type="submit" class="custom-button">Sign up</button>
+    </div>
+    <div class="custom-account">
+        <p>You already have an account? 
+            <a href="{% url 'user_assessment:home' %}" style="text-decoration: none;font-weight: bold;">Login</a>
+        </p> 
+    </div>
+    {% if error is not None %}
+        <p class="text-danger text-center">{{error}}</p>
+        {% endif %}
+   
+    </form>
+</div>
+</div>
+
+
+{% endblock %}
